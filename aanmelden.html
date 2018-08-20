@@ -1,0 +1,102 @@
+<?php
+
+if($_POST["submit"]) {
+    $recipient="robpraat@gmail.com";
+    $subject="Hartstroom aanmelding!";
+    $sender=$_POST["telefoon"];
+    $adres=$_POST["adres"];
+    $plaats=$_POST["plaats"];
+    $wanneer=$_POST["wanneer"];
+    $senderEmail=$_POST["senderEmail"];
+    $nieuwsbrief=$_POST["nieuwsbrief"];
+
+    $mailBody="telefoon: $sender\nEmail: $senderEmail\n$adres\n$plaats\n$wanneer\n$nieuwsbrief\n";
+
+    mail($recipient, $subject, $mailBody, "From: $sender <$senderEmail>
+
+	<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+   		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+   		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+		<title>Bootstrap (CDN)</title>
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		  <span class="navbar-brand mb-0 h1">Hartstroom.nu</span>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+		    <ul class="navbar-nav">
+		      <li class="nav-item">
+		        <a class="nav-link" href="index.html">Home</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="programma.html">Programma</a>
+		      </li>
+		      <li class="nav-item active">
+		        <a class="nav-link" href="aanmelden.html">Aanmelden <span class="sr-only">(current)</span></a>
+		      </li>
+		      <li class="nav-item dropdown">
+		        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		          Overnachten
+		        </a>
+		 		 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+		          <a class="dropdown-item" href="gaudy.html">Gaudy aan de Rijn</a>
+		          <a class="dropdown-item" href="bbr.html">B&B aan de Rijn</a>
+		          <a class="dropdown-item" href="bbs.html">B&B Studio's Houseboat</a>
+		  		</div>
+		      </li>
+		    </ul>
+		  </div>
+		</nav>
+		<img class="card-img-top" src="yurt.png" alt="Card image cap">
+		<form style="padding-left: 10px;" method="post" action="contact.php">
+		 <div class="form-row">
+		    <div class="form-group col-md-6">
+		      <label for="inputEmail4">Email</label>
+		      <input type="email" name="senderEmail" class="form-control" id="inputEmail4" placeholder="Email">
+		    </div>
+		    <div class="form-group col-md-6">
+		      <label for="inputPassword4">Telefoon</label>
+		      <input type="numeric" name="telefoon" class="form-control" id="inputPassword4" placeholder="Telefoon">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label for="inputAddress">Adres</label>
+		    <input type="text" name="adres" class="form-control" id="inputAddress" placeholder="Kerkstraat 15 1234AB">
+		  </div>
+		  <div class="form-row">
+		    <div class="form-group col-md-6">
+		      <label for="inputCity">Plaats</label>
+		      <input type="text" name="plaats" class="form-control" id="inputCity">
+		    </div>
+		    <div class="form-group col-md-4">
+		      <label for="inputState">Wanneer?</label>
+		      <select id="inputState" class="form-control" name="wanneer">
+		        <option>September</option>
+		       	<option>Oktober</option>
+
+		      </select>
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <div class="form-check">
+		      <input class="form-check-input" type="checkbox" name="nieuwsbrief" id="gridCheck">
+		      <label class="form-check-label" for="gridCheck">
+		        Graag ontvang ik de nieuwsbrief!
+		      </label>
+		    </div>
+		  </div>
+		  <button type="submit" name="submit" class="btn btn-outline-success">Aanmelden!</button>
+		</form>
+		  		    <p style="text-align: center;" class="card-text"><small class="text-muted">&copy; Teun Jansen 2018</small></p>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	</body>
+</html>
